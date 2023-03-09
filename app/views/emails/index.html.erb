@@ -1,0 +1,12 @@
+<h1 class = "text-center"> Emails </h1>
+<br>
+<div class = "container text-center">
+  <div class ="btn btn-outline-secondary"><%= link_to "New email", new_email_path %> </div>
+   <%= button_to "Recevoir un  email", emails_path, data: {turbolinks: true}, method: :post %>
+</div> 
+<br>
+<div id="emails", data-turbo-frame="true">
+  <% @emails.each do |email| %>
+    <%= render email %>
+</div>
+  <% end %>
